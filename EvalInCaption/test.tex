@@ -1,0 +1,45 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{blindtext}
+
+\usepackage{caption}
+\usepackage{float}
+\usepackage{ifthen}
+
+\title{A caption test}
+\author{Some one}
+\date{\today}
+
+
+\begin{document}
+
+\newcommand{\suppOrApp}{%
+  \ifthenelse{\boolean{thesisStyle}}
+    {Appendix}
+    {Supplementary}
+}
+\newboolean{thesisStyle}
+\setboolean{thesisStyle}{false} % Might want to reconsider this here.
+
+
+% This has additional space:
+\renewcommand{\tablename}{\textbf{\suppOrApp Table}}
+% But this would work fine.
+%\renewcommand{\tablename}{\textbf{Supporting Table}}
+
+\def \sOrA {\suppOrApp}
+
+\begin{table}
+\begin{tabular}{cc}
+1 & 2 \\
+3 & 4 \\
+\end{tabular}
+\caption{\blindtext
+\sOrA
+\blindtext}
+\end{table}
+
+
+\end{document}

@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{xr}
+\externaldocument{document}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage[amsmath,amsthm,thmmarks]{ntheorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+                        %
+\input{preambleCommon}  %
+                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{url}
+\usepackage{fullpage}
+\usepackage{setspace}
+
+% \renewcommand{\caption}[1]{\singlespacing\hangcaption{#1}\normalspacing}
+
+\captionsetup[ruled]{labelsep=period}
+\makeatletter
+\@addtoreset{algorithm}{section}% algorithm counter resets every section
+\makeatother
+\renewcommand{\thealgorithm}{\thesection.\arabic{algorithm}}% Algorithm # is <section>.<algorithm>
+\usepackage{natbib}
+\bibliographystyle{natbib}
+
+\title{Supporting Information \\ for \\ 
+\textit{A robust and efficient method for estimating enzyme
+complex abundance and metabolic flux from expression data.}
+}
+
+\author{
+Brandon Barker\\
+Narayanan Sadagopan\\ 
+Yiping Wang \\
+Kieran Smallbone\\ 
+Christopher R. Myers\\
+Hongwei Xi\\ 
+Jason W. Locasale\\
+Zhenglong Gu}
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%
+\begin{document}%%
+%%%%%%%%%%%%%%%%%%
+
+\newboolean{thesisStyle}
+\setboolean{thesisStyle}{false} % Might want to reconsider this here.
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                           %
+\input{documentHeadCommon} %
+                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             %
+\input{falcon_appendix}       %
+%                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{dissertation}
+\end{document}
