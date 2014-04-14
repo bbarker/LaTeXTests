@@ -1,0 +1,67 @@
+% Define block styls
+\tikzstyle{line} = [draw, very thick, color=black!50, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=2em]
+\tikzstyle{decision} = [diamond, draw, fill=blue!20,
+    text badly centered, node distance=6em, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+    text centered, node distance=4em]
+\tikzstyle{iogram} = [trapezium, draw, fill=pink!20,
+    trapezium left angle=70, trapezium right angle=-70,
+    text centered, align=center, node distance=5em]
+
+\newcommand{\suppOrApp}{%
+  \ifthenelse{\boolean{thesisStyle}}
+    {Appendix}
+    {Supplementary}
+}
+
+
+%\newcommand{\ANDw}{\textnormal{AND}}
+%\newcommand{\ORw}{\textnormal{OR}}
+\newcommand{\ANDw}{\land}
+\newcommand{\ORw}{\lor}
+
+\newcommand{\falconAbstractMotivation}{
+A major theme in constraint-based modeling is unifying 
+experimental data, such as biochemical information about the reactions
+that can occur in a system or the composition and localization of enzyme
+complexes, with high-throughput data including expression data,
+metabolomics, or DNA sequencing. The desired result is to increase
+ predictive capability resulting in improved understanding of metabolism.
+ The approach typically employed when only gene (or protein) intensities
+are available is the creation of tissue-specific models, which reduces
+the available reactions in an organism model, and does not provide an
+objective function for the estimation of fluxes, which is an important
+limitation in many modeling applications.
+}
+
+\newcommand{\falconAbstractResults}{
+We develop a method, flux assignment with LAD (least absolute
+deviation) convex objectives and normalization (FALCON),
+ that employs metabolic network reconstructions along with expression
+data to estimate fluxes. In order to use such a method, accurate
+measures of enzyme complex abundance are needed, so we first
+present a new algorithm that addresses quantification of complex
+abundance. Our extensions to prior techniques include the
+capability to work with large models and significantly improved
+run-time performance even for smaller models, an improved analysis of
+enzyme complex formation logic, the ability to handle very large
+complex rules that may incorporate multiple isoforms, and depending on
+the model constraints, either maintained or significantly improved
+correlation with experimentally measured fluxes.
+}
+
+\captionsetup{labelfont=bf}
+
+
+% Take care of potentially defined variables:
+
+% \newcommand[1]{\identifndef}{
+%   \if\isdef\csname{#1}
+%     {}
+%   \else
+%     \newcommand{\{#1}}[1]{\{#1}}
+%   \fi
+% }
+
+% \identifndef{processtable}

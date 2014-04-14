@@ -1,0 +1,76 @@
+\def\pgfsysdriver{pgfsys-dvipdfm.def}
+\usepackage{caption}
+%\usepackage{hangcaption}
+%\usepackage{algorithmic}
+%\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{ifthen}
+\usepackage{soul} %For highlights
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+
+%To help keep figures and tables in order:
+\usepackage{fixltx2e}
+%To fix quotes in verbatim, etc:
+\usepackage{upquote,textcomp}
+
+%Some possible packages to include
+\usepackage{epsfig}
+\usepackage{graphicx,pstricks}
+\usepackage{graphics}
+\usepackage{palatino}
+%\usepackage{subfigure}
+\usepackage{subcaption}
+\usepackage{txfonts}
+
+
+\graphicspath{{./figures/}}
+
+\usetikzlibrary{shapes, arrows}
+
+\makeatletter
+\newlength{\parskipsave}
+\newcommand\floatc@plainthin[2]{
+\setbox\@tempboxa\hbox{{\@fs@cfont #1:} #2}
+   \hbox to\hsize{\hfil\box\@tempboxa\hfil}\fi}
+\newcommand\fs@plainthin{
+  \def\@fs@cfont{\rmfamily}\let\@fs@capt\floatc@plainthin
+  \def\@fs@pre{}
+  \def\@fs@post{\vspace{-2.5em}}
+  \def\@fs@mid{\vspace\abovecaptionskip\relax}
+  \let\@fs@iftopcapt\iffalse}
+\makeatother
+
+\floatstyle{plainthin}
+\newfloat{AlgFloat}{h}{lop}
+
+
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmicensure}{\textbf{Output:}}
+%\newcommand{\INDSTATE}[1][1]{\STATE\hspace{#1\algorithmicindent}}
+\algnewcommand\algorithmicinput{\textbf{INPUT:}}
+\algnewcommand\INPUT{\item[\algorithmicinput]}
+\algnewcommand\algorithmicoutput{\textbf{OUTPUT:}}
+\algnewcommand\OUTPUT{\item[\algorithmicoutput]}
+
+\newtheorem{Theorem}{Theorem}
+\newtheoremstyle{break}  % follow `plain` defaults but change HEADSPACE.
+  {\topsep}   % ABOVESPACE
+  {\topsep}   % BELOWSPACE
+  {\itshape}  % BODYFONT
+  {-1em}      % INDENT (empty value is the same as 0pt)
+  {\bfseries} % HEADFONT
+  {}         % HEADPUNCT
+  {0pt}  % HEADSPACE. `plain` default: {5pt plus 1pt minus 1pt}
+  {}          % CUSTOM-HEAD-SPEC
+\theoremstyle{break}
+\newtheorem{Algorithm}{Algorithm}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\E}[1]{\operatorname{E}\left(#1\right)}
+\newcommand{\sgn}[1]{\operatorname{sgn}\left(#1\right)}
