@@ -1,0 +1,30 @@
+\documentclass[letterpaper]{article}
+
+\usepackage[english]{babel}
+\usepackage{blindtext}
+
+
+\date{\today}
+\title{Counter Assignment Test}
+
+\begin{document}
+\maketitle
+
+\newcount\myeqcnt
+\newcount\mycnt
+%
+\myeqcnt=5
+\mycnt5
+
+\newcommand\myeqvar{0}
+\newcommand\myvar{0}
+%
+\myeqvar=5
+\myvar5
+
+Counts: now we have myeqcnt = \the\myeqcnt\ and mycnt = \the\mycnt.
+
+Vars: now we have myeqvar = \myeqvar\ and myvar = \myvar.
+
+
+\end{document}

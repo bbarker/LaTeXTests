@@ -2,6 +2,18 @@
 \usepackage[affil-it]{authblk}
 \usepackage{ragged2e}
 
+\makeatletter
+%
+\def\maketitle
+  {{\@flushglue=.25\textwidth minus.25\textwidth\z@skip
+    \hyphenpenalty\@M
+    \let\old@date\@date
+    \def\@date{\mbox{}\hskip\@flushglue\old@date\hskip\@flushglue\mbox{}\par}%hmm
+    \renewenvironment{tabular}[2][]{\par}
+                                   {\par}%
+  \AB@maketitle}}
+%
+\makeatother
 
 \usepackage[english]{babel}
 \usepackage{blindtext}
@@ -15,7 +27,7 @@
   \thanks{Electronic address: \texttt{palpatine@empire.gove}; Corresponding author}}
 
 \affil[1]{Office of the Supreme Commander of the Imperial Forces, The Galactic Empire, The Bridge, Executor}
-\affil[2]{\protect \RaggedRight Order of the Sith Lords, LiMerge Power Building, The Works, Coruscant}
+\affil[2]{Order of the Sith Lords, LiMerge Power Building, The Works, Coruscant}
 \affil[3]{Office of the Emperor of the Galaxy, The Galactic Empire, 1000 Imperial Palace, 2 Main St. Coruscant}
 
 
