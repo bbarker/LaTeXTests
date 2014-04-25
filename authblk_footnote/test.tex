@@ -13,19 +13,25 @@
 
 % The order may be wrong on these next two:
 \setcounter{CoAuthor}{\value{footnote}}
-\edef\CoAuthorMark{\footnotemark[\value{CoAuthor}]} 
-
-\author[2,3]{Darth Sidious\CoAuthorMark%
-  \thanks{Electronic address: \texttt{palpatine@empire.gove}; Corresponding author}}
-
-\affil[1]{Office of the Supreme Commander of the Imperial Forces, The Galactic Empire, The Bridge, Executor}
-\affil[2]{Order of the Sith Lords, LiMerge Power Building, The Works, Coruscant}
-\affil[3]{Office of the Emperor of the Galaxy, The Galactic Empire, 1000 Imperial Palace, 2 Main St. Coruscant}
+\def\CoAuthorMark{\footnotemark[\value{footnote}]} 
 
 
 \date{\today}
 
 \begin{document}
+
+
+
+\author[2,3]{Darth Sidious\protect\CoAuthorMark%
+  \thanks{Electronic address: \texttt{palpatine@empire.gove}; Corresponding author}}
+
+\affil[1]{Office of the Supreme Commander of the Imperial Forces, The
+Galactic Empire, The Bridge, Executor}
+\affil[2]{Order of the Sith Lords, LiMerge Power Building, The Works,
+Coruscant}
+\affil[3]{Office of the Emperor of the Galaxy, The Galactic Empire,
+1000 Imperial Palace, 2 Main St. Coruscant}
+
 
 \maketitle
 \blindtext
