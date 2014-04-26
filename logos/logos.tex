@@ -4,23 +4,33 @@
 \usepackage[english]{babel}
 \usepackage{blindtext}
 
-
+\newcommand{\BEBraise}{0.74ex}
+\newcommand{\BEBhspace}{\hspace{-0.4ex}}
+\newcommand{\BEBsig}{%
+\raisebox{\BEBraise}{B}%
+  \BEBhspace E\BEBhspace%
+\raisebox{\BEBraise}{B}}
 \begin{document}
-\Huge
+
+{\Huge
 
 BEB
 
-\vspace{2em}
 
-\raisebox{0.35em}{B}\hspace{-0.19em}E\hspace{-0.19em}\raisebox{0.35em}{B}
-
-\newcommand{\BEBsig}{\raisebox{0.35em}{B}\hspace{-0.19em}E\hspace{-0.19em}\raisebox{0.35em}{B}}
+%\vspace{2ex}
 
 \BEBsig
 
-\small
+\textit{\BEBsig}
+
+\renewcommand{\BEBhspace}{\hspace{-0.9ex}}
+\BEBsig
+}
+
+{\small
 
 % It doesn't seem to preserve alignment upon fontsize change
 \BEBsig
+}
 
 \end{document}
