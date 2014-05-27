@@ -10,7 +10,32 @@
 \raisebox{\BEBraise}{B}%
   \BEBhspace E\BEBhspace%
 \raisebox{\BEBraise}{B}}
+
+\newcommand{\BEBsigit}{%
+%\begin{mbox
+%\line(1,0){30}
+
+%\vspace{-1.24ex}
+\setlength{\unitlength}{1em}
+{\linethickness{0.062ex} 
+\line(1,0){1.2}}
+
+\vspace{-1.2452ex}
+
+\textit{B\hspace{-0.30em}E\hspace{-0.26em}B}%
+
+\vspace{-2.833ex}
+
+{\linethickness{0.062ex} 
+\line(1,0){1.2}}
+
+
+%\end{mbox}
+}
+
+
 \begin{document}
+
 
 {\Huge
 
@@ -21,6 +46,8 @@ B\hspace{-0.23em}E\hspace{-0.23em}B
 B\hspace{-0.29em}E\hspace{-0.23em}B
 
 \textit{B\hspace{-0.305em}E\hspace{-0.25em}B}
+
+\BEBsigit
 
 %\vspace{2ex}
 
@@ -34,8 +61,9 @@ B\hspace{-0.29em}E\hspace{-0.23em}B
 
 {\small
 
-% It doesn't seem to preserve alignment upon fontsize change
 \BEBsig
+
+\BEBsigit
 }
 
 \end{document}
