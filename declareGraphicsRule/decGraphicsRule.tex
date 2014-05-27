@@ -1,0 +1,22 @@
+\documentclass[compress,red,notes]{beamer}
+% run with:
+% pdflatex -shell-escape decGraphicsRule.tex
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+
+\epstopdfDeclareGraphicsRule{.eps}{pdf}{.pdf}{%
+  epstool --copy --bbox #1 --output epstool_tmp.eps;
+  epstopdf epstool_tmp.eps --outfile \OutputFile
+}
+
+
+\begin{document}
+
+\frame{\frametitle{Here is an image ... or not!}
+\begin{center}
+\includegraphics[height=0.85\textheight,width=0.53\textwidth]
+{tiger.eps}
+\end{center}
+}
+\end{document}
