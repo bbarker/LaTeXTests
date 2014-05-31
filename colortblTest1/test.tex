@@ -1,5 +1,8 @@
 \documentclass[compress,red,notes]{beamer}
-
+%
+% Discussion at:
+% http://tex.stackexchange.com/questions/181330/when-using-colortbl-column-is-still-white-what-am-i-doing-wrong
+%
 \usepackage{tabularx}
 \usepackage{xcolor}
 \usepackage{colortbl}
@@ -13,7 +16,7 @@
 \begin{figure}
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrrrrr>{\columncolor[rgb]{Green}}r}
+\begin{tabular}{l*{7}{r}>{\columncolor{Green}}r}
 \textbf{(a)} \hspace{1.2cm} & Max. $\mu$ & Model & 
   Standard FBA & Fitted FBA & GIMME & iMAT & Lee et al. & FALCON\\
  & 75 \%& Yeast~5 MC & 0.66 & 0.66 & NaN  & 0.57 & 0.64 & 1 \\
