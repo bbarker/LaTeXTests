@@ -1,11 +1,22 @@
 \documentclass[compress,red,notes]{beamer}
 
+% updated to non-working solution based on:
+% http://tex.stackexchange.com/questions/55806/mindmap-tikzpicture-in-beamer-reveal-step-by-step/55849#55849
+
 \usepackage{tikz}
 
 \tikzstyle{line} = [draw, very thick, color=black!50]
 
 \tikzstyle{block} = [rectangle, draw,
     text centered, node distance=4em]
+
+\tikzset{
+  invisible/.style={#1{}},
+  visible on/.style={alt={{color=blue!50}{invisible}}},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+  },
+}
 
 
 \begin{document}
@@ -16,8 +27,7 @@
 \centering
 \begin{tikzpicture}[scale=0.5, every node/.style={scale=0.5}]
 
-    \only<1>\node [block, fill=blue!50] (start) {start}; 
-    \only<2>\node [block] (start) {start}; 
+    \node [block, visible on=<2>] (start) {start}; 
 
     \node [block, below of=start] (end) {end}; 
 
