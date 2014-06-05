@@ -1,0 +1,29 @@
+\documentclass[compress,red,notes]{beamer}
+
+\begin{document}
+
+\frame{\frametitle{An overview to constraint-based modeling}
+
+\makeatletter
+\def\strippt{\strip@pt}
+\makeatother
+
+\newsavebox{\toynet}
+\savebox{\toynet}{  
+\includegraphics*[width=\textwidth, viewport=0 418 708 718, clip=true]
+{SmatExample}  }
+
+\newsavebox{\toySmat}
+\savebox{\toySmat}{
+\includegraphics*[width=\textwidth, viewport=0 0 708 418, clip=true]
+{SmatExample} }
+
+\newsavebox{\FBAgeom}
+
+\begin{picture}(\strippt\textwidth, \strippt\textheight)
+\put(0,\strippt\textheight){\usebox{\toynet}}
+
+\end{picture}
+} % end of \frame
+
+\end{document}
