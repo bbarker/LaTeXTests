@@ -1,0 +1,51 @@
+\documentclass[compress,red,notes]{beamer}
+
+\begin{document}
+
+\frame{
+\frametitle{Test color transition in beamer enumerations}
+
+{\setbeamercolor{local structure}{fg=gray}
+\setbeamercolor{itemize/enumerate body}{fg=gray!65}
+\begin{itemize}
+  {\only<1>{\setbeamercolor{local structure}{fg=red}
+            \setbeamercolor{itemize/enumerate body}{fg=black}}
+  \item Major point 1
+  \begin{itemize}
+    \scriptsize
+    \item Minor point 1
+    \item Minor point 2
+  \end{itemize}
+  } % end of \only<1>
+  {\only<2>{\setbeamercolor{local structure}{fg=red}
+            \setbeamercolor{itemize/enumerate body}{fg=black}}
+  \item Major point 2
+  \begin{itemize}
+    \scriptsize
+    \item Minor point 1
+    \item Minor point 2
+  \end{itemize}
+  } % end of \only<2>
+  {\only<3>{\setbeamercolor{local structure}{fg=red}
+            \setbeamercolor{itemize/enumerate body}{fg=black}}
+  \item Major point 3
+  \begin{itemize}
+    \scriptsize
+    \item Minor point 1
+    \item Minor point 2
+  \end{itemize}
+  } % end of \only<3>
+  {\only<4>{\setbeamercolor{local structure}{fg=red}
+            \setbeamercolor{itemize/enumerate body}{fg=black}}
+  \item Major point 4
+  \begin{itemize}
+    \scriptsize
+    \item Minor point 1
+    \item Minor point 2
+  \end{itemize}
+  } % end of \only<4>
+\end{itemize}
+} % end of \color{gray}
+} % end of \frame
+
+\end{document}
