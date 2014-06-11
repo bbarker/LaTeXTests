@@ -2,14 +2,18 @@
 
 \begin{document}
 
+\newcommand{\itemOnly}[1]{\only<#1>{%
+\setbeamercolor{local structure}{fg=gray}%
+\setbeamercolor{itemize/enumerate body}{fg=gray!65}%
+}}
+
 \frame{
 \frametitle{Test color transition in beamer enumerations}
 
 {\setbeamercolor{local structure}{fg=gray}
 \setbeamercolor{itemize/enumerate body}{fg=gray!65}
 \begin{itemize}
-  {\only<1>{\setbeamercolor{local structure}{fg=red}
-            \setbeamercolor{itemize/enumerate body}{fg=black}}
+  {\itemOnly{1}
   \item Major point 1
   \begin{itemize}
     \scriptsize

@@ -1,0 +1,29 @@
+\documentclass{beamer}
+\usepackage{subcaption}
+
+\begin{document}
+\frame{\frametitle{testing}
+\begin{figure}
+\begin{tabular}{cc}
+
+\newdimen\fluxfigwidth
+\fluxfigwidth=0.5\textwidth
+\newdimen\fluxlegwidth
+\fluxlegwidth=\textwidth
+% I want to do this eventually:
+% \advance\fluxlegwidth-\fluxfigwidth
+% \begin{subfigure}[lb]{\fluxfigwidth\textwidth}
+  \begin{subfigure}[t]{\fluxfigwidth}
+  \caption{\the\fluxfigwidth}
+  \includegraphics[width=\textwidth]{tiger}
+  \end{subfigure}
+&
+  \begin{subfigure}[t]{\fluxlegwidth}
+  \caption{\the\fluxlegwidth}
+  \raisebox{0.3\height}{\includegraphics[scale=0.4,center]{tiger}}
+  \end{subfigure}
+\\
+\end{tabular}
+\end{figure}
+} % end of \frame
+\end{document}
